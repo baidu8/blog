@@ -24,7 +24,7 @@
 <meta property="og:description" content="收集一些优秀的分享">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-12-02T22:55:09.000Z">
-<meta property="article:modified_time" content="2021-12-03T18:27:06.010Z">
+<meta property="article:modified_time" content="2021-12-03T22:24:24.122Z">
 <meta property="article:author" content="江小白">
 <meta property="article:tag" content="标签">
 <meta name="twitter:card" content="summary_large_image">
@@ -251,7 +251,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 小时前
+                  本文最后更新于：2 分钟前
                 
               </p>
             
@@ -260,7 +260,7 @@
 
 <span id="more"></span>
 <p>超清MV：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/jsNeewKA9yM">https://www.aliyundrive.com/s/jsNeewKA9yM</a><br>MV：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/mdwdLkhKRv8">https://www.aliyundrive.com/s/mdwdLkhKRv8</a><br>韩国19禁MV：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/NBMjMKYc3c8">https://www.aliyundrive.com/s/NBMjMKYc3c8</a></p>
-<iframe style="width: 100%; height: 500px;" src="//player.bilibili.com/player.html?aid=934277463&bvid=BV1xT4y1R79r&cid=444906311&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
             </div>
             <hr>
             <div>
@@ -288,9 +288,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/18/%E5%BD%B1%E8%A7%86%E6%8E%A8%E8%8D%90/">
+                      <a href="/2021/12/04/%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91%E8%AF%95%E8%AF%95/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">影视推荐</span>
+                        <span class="hidden-mobile">插入视频试试</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -316,23 +316,29 @@
                   
                 
                 
-  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', function() {
-        var options = Object.assign(
-          {"appId":"huvi08udCywoAv43K1NY0T1r-MdYXbMMI","appKey":"FpGKfNWI6SrWtK2uDSKDozwh","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
-          {
-            el: "#valine",
-            path: window.location.pathname
-          }
-        )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          Fluid.plugins.initFancyBox('#valine .vcontent img:not(.vemoji)');
-        })
-      });
-    });
+    Fluid.utils.loadComments('#comments', function() {
+      var light = 'boxy-light';
+      var dark = 'github-dark';
+      var schema = document.documentElement.getAttribute('data-user-color-scheme');
+      if (schema === 'dark') {
+        schema = dark;
+      } else {
+        schema = light;
+      }
+      window.UtterancesThemeLight = light;
+      window.UtterancesThemeDark = dark;
+      var s = document.createElement('script');
+      s.setAttribute('src', 'https://utteranc.es/client.js');
+      s.setAttribute('repo', 'baidu8/pinglun');
+      s.setAttribute('issue-term', 'title');
+      
+      s.setAttribute('label', 'utterances');
+      
+      s.setAttribute('theme', schema);
+      s.setAttribute('crossorigin', 'anonymous');
+      document.getElementById('comments').appendChild(s);
+    })
   </script>
   <noscript>Please enable JavaScript to view the comments</noscript>
 
