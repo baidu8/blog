@@ -33,6 +33,31 @@
   
   
   <entry>
+    <title>一些代码</title>
+    <link href="/2021/12/04/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E4%BB%A3%E7%A0%81/"/>
+    <url>/2021/12/04/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E4%BB%A3%E7%A0%81/</url>
+    
+    <content type="html"><![CDATA[<p>git add . 添加文件<br>git commit -m ‘注释’ 提交<br>git push -u origin master 推送</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>代码</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>代码</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>插入视频试试</title>
     <link href="/2021/12/04/%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91%E8%AF%95%E8%AF%95/"/>
     <url>/2021/12/04/%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91%E8%AF%95%E8%AF%95/</url>
