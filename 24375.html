@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>网站添加落叶特效 | alyun</title><meta name="author" content="江小白"><meta name="copyright" content="江小白"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="js实现网站落叶特效">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站添加落叶特效">
+<meta property="og:url" content="https://alyun.vip/24375.html">
+<meta property="og:site_name" content="alyun">
+<meta property="og:description" content="js实现网站落叶特效">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://alyun.vip/img/yezi.png">
+<meta property="article:published_time" content="2023-04-05T01:33:46.000Z">
+<meta property="article:modified_time" content="2024-07-17T12:38:25.469Z">
+<meta property="article:author" content="江小白">
+<meta property="article:tag" content="js">
+<meta property="article:tag" content="canvas">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://alyun.vip/img/yezi.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://alyun.vip/24375.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?487908667e9eaf99d2339593cdc957fd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"<i class=\"al icon-fanti\"></i>","msgToSimplifiedChinese":"<i class=\"al icon-jianti\"></i>"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":350},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: 江小白","link":"链接: ","source":"来源: alyun","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网站添加落叶特效',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-17 12:38:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css?1"><link rel="stylesheet" href="/css/rightmenu.css"><link rel="stylesheet" href="/icon/iconfont.css"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3992406_4vb9627y7yp.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=726817119&amp;s=640" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw al icon-shouye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw al icon-fenlei"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%90%84%E7%B1%BB%E5%88%86%E4%BA%AB/"><span> 各类分享</span></a></li><li><a class="site-page child" href="/categories/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/"><span> 建站相关</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AF%E4%BB%B6%E6%8F%92%E4%BB%B6/"><span> 软件插件</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-angle-double-right"></i><span> 更多</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw al icon-heji"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw al icon-tupian"></i><span> 照片</span></a></li><li><a class="site-page child" href="/books/index.html"><span> 阅读记录</span></a></li><li><a class="site-page child" href="/movies/index.html"><span> 观影记录</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw al icon-dianpudaohang"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw al icon-INFO"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw al icon-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw al icon-guidang"></i><span> 归档</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw al icon-ax"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments"><i class="fa-fw iconfont al-liuyanmoban"></i><span> 留言</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><div id="nav_group"><span id="blog-info"><a href="/" title="alyun"><span class="site-name">alyun</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw al icon-shouye"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw al icon-fenlei"></i><span> 分类</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%90%84%E7%B1%BB%E5%88%86%E4%BA%AB/"><span> 各类分享</span></a></li><li><a class="site-page child" href="/categories/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/"><span> 建站相关</span></a></li><li><a class="site-page child" href="/categories/%E8%BD%AF%E4%BB%B6%E6%8F%92%E4%BB%B6/"><span> 软件插件</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-angle-double-right"></i><span> 更多</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw al icon-heji"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw al icon-tupian"></i><span> 照片</span></a></li><li><a class="site-page child" href="/books/index.html"><span> 阅读记录</span></a></li><li><a class="site-page child" href="/movies/index.html"><span> 观影记录</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw al icon-dianpudaohang"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw al icon-INFO"></i><span> 其它</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tags/"><i class="fa-fw al icon-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw al icon-guidang"></i><span> 归档</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw al icon-ax"></i><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/comments"><i class="fa-fw iconfont al-liuyanmoban"></i><span> 留言</span></a></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="al icon-sousuo fa-fw"></i></a></div><div id="search-button"><a class="site-page" href="/shuo" title="说说"><i class="iconfont al-qzone fa-fw"></i></a></div><div id="search-button"><a class="site-page" onclick="toggleWinbox()" title="切换背景"><i class="iconfont al-gengduo1"></i></a></div><div id="search-button"><a class="site-page" href="javascript:rmf.switchDarkMode();" title="浅色和深色模式转换"><i class="al icon-yinyang-taiji"></i></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="al icon-mulu"></i></a></div></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">网站添加落叶特效</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="al icon--calendar- fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-05T01:33:46.000Z" title="发表于 2023-04-05 01:33:46">2023-04-05</time><span class="post-meta-separator">|</span><i class="al icon-gengxin fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-17T12:38:25.469Z" title="更新于 2024-07-17 12:38:25">2024-07-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="al icon-fenlei fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/">建站相关</a><i class="fas fa-angle-right post-meta-separator"></i><i class="al icon-fenlei fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BB%BA%E7%AB%99%E7%9B%B8%E5%85%B3/%E4%BB%A3%E7%A0%81%E6%94%B6%E8%97%8F/">代码收藏</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="al icon-bangzhushouce fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">663</span><span class="post-meta-separator">|</span><i class="al icon-tubiaozhizuomoban- fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="网站添加落叶特效"><i class="al icon-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><ol>
+<li>新建js</li>
+<li>引入js</li>
+<li>别忘了canvas标签<div class="hide-block"><button type="button" class="hide-button" style="">查看js
+    </button><div class="hide-content"><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 落叶效果</span></span><br><span class="line"><span class="keyword">var</span> stop, staticx;</span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>();</span><br><span class="line">img.<span class="property">src</span> = <span class="string">&quot;图片地址&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> leafSize = <span class="number">40</span>; <span class="comment">//树叶大小</span></span><br><span class="line"><span class="keyword">var</span> leafNum = <span class="number">8</span>; <span class="comment">//数量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Leaves</span>(<span class="params">x, y, s, r, fn</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">x</span> = x;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">y</span> = y;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">s</span> = s;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">r</span> = r;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">fn</span> = fn</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">Leaves</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">draw</span> = <span class="keyword">function</span>(<span class="params">cxt</span>) &#123;</span><br><span class="line">    cxt.<span class="title function_">save</span>();</span><br><span class="line">    <span class="keyword">var</span> xc = <span class="number">20</span> * <span class="variable language_">this</span>.<span class="property">s</span> / <span class="number">2</span>;</span><br><span class="line">    cxt.<span class="title function_">translate</span>(<span class="variable language_">this</span>.<span class="property">x</span>, <span class="variable language_">this</span>.<span class="property">y</span>);</span><br><span class="line">    cxt.<span class="title function_">rotate</span>(<span class="variable language_">this</span>.<span class="property">r</span>);</span><br><span class="line">    cxt.<span class="title function_">drawImage</span>(img, <span class="number">0</span>, <span class="number">0</span>, leafSize * <span class="variable language_">this</span>.<span class="property">s</span>, leafSize * <span class="variable language_">this</span>.<span class="property">s</span>);</span><br><span class="line">    cxt.<span class="title function_">restore</span>()</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">Leaves</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">update</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">x</span> = <span class="variable language_">this</span>.<span class="property">fn</span>.<span class="title function_">x</span>(<span class="variable language_">this</span>.<span class="property">x</span>, <span class="variable language_">this</span>.<span class="property">y</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">y</span> = <span class="variable language_">this</span>.<span class="property">fn</span>.<span class="title function_">y</span>(<span class="variable language_">this</span>.<span class="property">y</span>, <span class="variable language_">this</span>.<span class="property">y</span>);</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">r</span> = <span class="variable language_">this</span>.<span class="property">fn</span>.<span class="title function_">r</span>(<span class="variable language_">this</span>.<span class="property">r</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">x</span> &gt; <span class="variable language_">window</span>.<span class="property">innerWidth</span> || <span class="variable language_">this</span>.<span class="property">x</span> &lt; <span class="number">0</span> || <span class="variable language_">this</span>.<span class="property">y</span> &gt; <span class="variable language_">window</span>.<span class="property">innerHeight</span> || <span class="variable language_">this</span>.<span class="property">y</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">r</span> = <span class="title function_">getRandom</span>(<span class="string">&quot;fnr&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">random</span>() &gt; <span class="number">0.4</span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">x</span> = <span class="title function_">getRandom</span>(<span class="string">&quot;x&quot;</span>);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">y</span> = <span class="number">0</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">s</span> = <span class="title function_">getRandom</span>(<span class="string">&quot;s&quot;</span>);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">r</span> = <span class="title function_">getRandom</span>(<span class="string">&quot;r&quot;</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">x</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">y</span> = <span class="title function_">getRandom</span>(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">s</span> = <span class="title function_">getRandom</span>(<span class="string">&quot;s&quot;</span>);</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">r</span> = <span class="title function_">getRandom</span>(<span class="string">&quot;r&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">LeavesList</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">list</span> = []</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">LeavesList</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">push</span> = <span class="keyword">function</span>(<span class="params">leaves</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">push</span>(leaves)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">LeavesList</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">update</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = <span class="variable language_">this</span>.<span class="property">list</span>.<span class="property">length</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">list</span>[i].<span class="title function_">update</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">LeavesList</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">draw</span> = <span class="keyword">function</span>(<span class="params">cxt</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = <span class="variable language_">this</span>.<span class="property">list</span>.<span class="property">length</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">list</span>[i].<span class="title function_">draw</span>(cxt)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">LeavesList</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">get</span> = <span class="keyword">function</span>(<span class="params">i</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">list</span>[i]</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title class_">LeavesList</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">size</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">list</span>.<span class="property">length</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算长、宽、位置、旋转的随机</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getRandom</span>(<span class="params">option</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> ret, random;</span><br><span class="line">    <span class="keyword">switch</span> (option) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;x&quot;</span>:</span><br><span class="line">            ret = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;y&quot;</span>:</span><br><span class="line">            ret = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;s&quot;</span>:</span><br><span class="line">            ret = <span class="number">0.3</span> + <span class="title class_">Math</span>.<span class="title function_">random</span>();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;r&quot;</span>:</span><br><span class="line">            ret = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">4</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;fnx&quot;</span>:</span><br><span class="line">            random = -<span class="number">0.5</span> + <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">1</span>;</span><br><span class="line">            ret = <span class="keyword">function</span>(<span class="params">x, y</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> x + <span class="number">0.5</span> * random - <span class="number">1.7</span></span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;fny&quot;</span>:</span><br><span class="line">            random = <span class="number">1.5</span> + <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">0.7</span>;</span><br><span class="line">            ret = <span class="keyword">function</span>(<span class="params">x, y</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> y + random</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;fnr&quot;</span>:</span><br><span class="line">            random = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">0.03</span>;</span><br><span class="line">            ret = <span class="keyword">function</span>(<span class="params">r</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> r + random</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">startLeaves</span>(<span class="params"></span>) &#123;</span><br><span class="line">    requestAnimationFrame = <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">mozRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">webkitRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">msRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">oRequestAnimationFrame</span>;</span><br><span class="line">    <span class="keyword">var</span> canvas = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;canvas&quot;</span>),</span><br><span class="line">        cxt;</span><br><span class="line">    staticx = <span class="literal">true</span>;</span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">    canvas.<span class="title function_">setAttribute</span>(<span class="string">&quot;style&quot;</span>, <span class="string">&quot;position: fixed;left: 0;top: 0;pointer-events: none;&quot;</span>);</span><br><span class="line">    canvas.<span class="title function_">setAttribute</span>(<span class="string">&quot;id&quot;</span>, <span class="string">&quot;canvas_leaves&quot;</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&quot;body&quot;</span>)[<span class="number">0</span>].<span class="title function_">appendChild</span>(canvas);</span><br><span class="line">    cxt = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> leavesList = <span class="keyword">new</span> <span class="title class_">LeavesList</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; leafNum; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> leaves, randomX, randomY, randomS, randomR, randomFnx, randomFny;</span><br><span class="line">        randomX = <span class="title function_">getRandom</span>(<span class="string">&quot;x&quot;</span>);</span><br><span class="line">        randomY = <span class="title function_">getRandom</span>(<span class="string">&quot;y&quot;</span>);</span><br><span class="line">        randomR = <span class="title function_">getRandom</span>(<span class="string">&quot;r&quot;</span>);</span><br><span class="line">        randomS = <span class="title function_">getRandom</span>(<span class="string">&quot;s&quot;</span>);</span><br><span class="line">        randomFnx = <span class="title function_">getRandom</span>(<span class="string">&quot;fnx&quot;</span>);</span><br><span class="line">        randomFny = <span class="title function_">getRandom</span>(<span class="string">&quot;fny&quot;</span>);</span><br><span class="line">        randomFnR = <span class="title function_">getRandom</span>(<span class="string">&quot;fnr&quot;</span>);</span><br><span class="line">        leaves = <span class="keyword">new</span> <span class="title class_">Leaves</span>(randomX, randomY, randomS, randomR, &#123;</span><br><span class="line">            <span class="attr">x</span>: randomFnx,</span><br><span class="line">            <span class="attr">y</span>: randomFny,</span><br><span class="line">            <span class="attr">r</span>: randomFnR</span><br><span class="line">        &#125;);</span><br><span class="line">        leaves.<span class="title function_">draw</span>(cxt);</span><br><span class="line">        leavesList.<span class="title function_">push</span>(leaves)</span><br><span class="line">    &#125;</span><br><span class="line">    stop = <span class="title function_">requestAnimationFrame</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        cxt.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">        leavesList.<span class="title function_">update</span>();</span><br><span class="line">        leavesList.<span class="title function_">draw</span>(cxt);</span><br><span class="line">        stop = <span class="title function_">requestAnimationFrame</span>(<span class="variable language_">arguments</span>.<span class="property">callee</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onresize</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> canvasSnow = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;canvas_snow&quot;</span>)</span><br><span class="line">&#125;;</span><br><span class="line">img.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">startLeaves</span>()</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">stopp</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (staticx) &#123;</span><br><span class="line">        <span class="keyword">var</span> child = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;canvas_leaves&quot;</span>);</span><br><span class="line">        child.<span class="property">parentNode</span>.<span class="title function_">removeChild</span>(child);</span><br><span class="line">        <span class="variable language_">window</span>.<span class="title function_">cancelAnimationFrame</span>(stop);</span><br><span class="line">        staticx = <span class="literal">false</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">startLeaves</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div></div></li>
+<li>图片<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/png;base64,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"></li>
+</ol>
+<h2 id="代码来源"><a href="#代码来源" class="headerlink" title="代码来源"></a>代码来源</h2><p><a target="_blank" rel="noopener" href="https://hi-coder.gitee.io/">https://hi-coder.gitee.io/</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://alyun.vip">江小白</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://alyun.vip/24375.html">https://alyun.vip/24375.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://alyun.vip" target="_blank">alyun</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/js/">js</a><a class="post-meta__tags" href="/tags/canvas/">canvas</a></div><div class="post_share"><div class="social-share" data-image="/img/yezi.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/43509.html" title="网站显示实时帧率fps"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.gejiba.com/images/eafae3621f5fb33e8e137e1c601a910a.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">网站显示实时帧率fps</div></div></a></div><div class="next-post pull-right"><a href="/41792.html" title="butterfly动态风车H标签"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.gejiba.com/images/c65445ccc5448e3a341d0f671235a1ce.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">butterfly动态风车H标签</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/19895.html" title="站点运行计算js"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/djs.png" alt="cover"><div class="content is-center"><div class="date"><i class="al icon--calendar- fa-fw"></i> 2022-05-29</div><div class="title">站点运行计算js</div></div></a></div><div><a href="/43509.html" title="网站显示实时帧率fps"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.gejiba.com/images/eafae3621f5fb33e8e137e1c601a910a.webp" alt="cover"><div class="content is-center"><div class="date"><i class="al icon--calendar- fa-fw"></i> 2023-04-05</div><div class="title">网站显示实时帧率fps</div></div></a></div><div><a href="/59356.html" title="一些浏览器控制台功能"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.gejiba.com/images/7a8c58b03e925e0b3315dddd4d82be1c.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="al icon--calendar- fa-fw"></i> 2022-06-08</div><div class="title">一些浏览器控制台功能</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="al icon-shequpinglun fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Twikoo</span><span class="switch-btn"></span><span class="second-comment">Utterances</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=726817119&amp;s=640" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">江小白</div><div class="author-info__description">一个啥都分享的博客网站</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">40</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" href="javascript:toRandomPost()"><i class="fa-solid fa-bus-alt"></i><span>先上车</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://www.alipan.com/s/UvsBVEmyr5v" target="_blank" title="阿里"><i class="al icon-aliyunpan"></i></a><a class="social-icon" href="mailto:726817119@qq.com" target="_blank" title="Email"><i class="al icon-wodeyouxiang"></i></a><a class="social-icon" href="https://www.douban.com/people/n726817119/" target="_blank" title="豆瓣"><i class="al icon-douban"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><a target="_blank" rel="noopener" href="https://www.alipan.com/s/UvsBVEmyr5v">👉阿里影视分享👈</a><br>⬆️阿里云盘空间变小了没多少东西分享了🤡就放这一个文件夹吧</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="al icon-mulu"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%9D%A5%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">代码来源</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="al icon-gengxin"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/710s.html" title="推荐三部不错的韩剧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/yingshi/siqijiangzi6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="推荐三部不错的韩剧"/></a><div class="content"><a class="title" href="/710s.html" title="推荐三部不错的韩剧">推荐三部不错的韩剧</a><time datetime="2024-01-19T01:26:31.000Z" title="发表于 2024-01-19 01:26:31">2024-01-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/71d0.html" title="推荐三部不错的美剧"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/wcyijai.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="推荐三部不错的美剧"/></a><div class="content"><a class="title" href="/71d0.html" title="推荐三部不错的美剧">推荐三部不错的美剧</a><time datetime="2023-05-31T21:38:31.000Z" title="发表于 2023-05-31 21:38:31">2023-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/4176.html" title="唯美头像分享"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://p5.a.yximgs.com/ufile/atlas/NTIzNzEyMzUxNTk1NjcyODI3Ml8xNjgwODM5MTM0ODY1_5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="唯美头像分享"/></a><div class="content"><a class="title" href="/4176.html" title="唯美头像分享">唯美头像分享</a><time datetime="2023-04-10T15:35:57.000Z" title="发表于 2023-04-10 15:35:57">2023-04-10</time></div></div></div></div><div class="card-widget ads-wrap"><script id="w2898_17506">(function () {var zy = document.createElement("script");var flowExchange = window.location.protocol.split(":")[0];var http = flowExchange === "https"?"https":"http";zy.src = http+"://exchange.2898.com/index/flowexchange/getGoods?id=17506&sign=569c49bc81fdc948a8bdae79b9646409";var s = document.getElementsByTagName("script");for(var i=0;i< s.length;i++){if(s[i].id){if(s[i].id == "w2898_17506"){s[i].parentNode.insertBefore(zy, s[i]);continue;}}}})();</script></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright0"><a target="_blank" rel="noopener" href="https://vercel.com/dashboard"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/vercel.svg"/></a><span class="footer-separator"> </span><a href="javascript:toRandomPost()"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/alyun.svg"/></a></div><!-- .copyright!= `&copy;${theme.footer.owner.since} - ${nowYear} By ${config.author}` + ' '--><div id="yao"><div id="bai"><span>2022 - 2024</span><span>  By 江小白</span></div></div><div class="framework-info"><!-- span= _p('footer.framework') + ' '--><a target="_blank" rel="noopener" href="https://hexo.io"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/hexo.svg"/></a><span class="footer-separator"> </span><!-- span= _p('footer.theme') + ' '--><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly.svg"/></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="al icon-shu"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="al icon-yinyang-taiji"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="al icon-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="al icon-mulu"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="al icon-shequpinglun"></i></a><a id="to_comment" href="/shuo" title="说说"><i class="iconfont al-qzone"></i></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="al icon-zuoyou"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="al icon-xiangshang"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="al icon-xia"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.1/instantpage.min.js" type="module"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.3/lazyload.iife.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.4.0/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://alyun.zeabur.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://alyun.zeabur.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.11/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script><script>function loadUtterances () {
+  let ele = document.createElement('script')
+  ele.setAttribute('id', 'utterances_comment')
+  ele.setAttribute('src', 'https://utteranc.es/client.js')
+  ele.setAttribute('repo', 'baidu8/pinglun')
+  ele.setAttribute('issue-term', 'title')
+  let nowTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+  ele.setAttribute('theme', nowTheme)
+  ele.setAttribute('crossorigin', 'anonymous')
+  ele.setAttribute('async', 'true')
+  document.getElementById('utterances-wrap').insertAdjacentElement('afterbegin',ele)
+}
+
+function utterancesTheme () {
+  const iframe = document.querySelector('.utterances-frame')
+  if (iframe) {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'photon-dark' : 'github-light'
+    const message = {
+      type: 'set-theme',
+      theme: theme
+    };
+    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+}
+
+if ('Twikoo' === 'Utterances' || !true) {
+  if (true) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+  else loadUtterances()
+} else {
+  function loadOtherComment () {
+    loadUtterances()
+  }
+}</script></div><script data-pjax type="text/javascript" src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js"></script><script data-pjax type="text/javascript" src="/js/rightmenu.js"></script><script data-pjax type="text/javascript" src="/random.js"></script><script data-pjax type="text/javascript" src="/js/custom/nav.js"></script><script data-pjax type="text/javascript" src="/js/yinghua.js"></script><script data-pjax type="text/javascript" src="/js/fps.js"></script><script data-pjax type="text/javascript" src="/js/winbox.bundle.min.js"></script><script data-pjax type="text/javascript" src="/js/beijing.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdnjs.cloudflare.com/ajax/libs/butterfly-extsrc/1.1.3/click-show-text.min.js" data-mobile="true" data-text="民主😇,文明🤩,和谐😆,自由😲,平等☺️,公正😉,法治😁,爱国💖,敬业😏,诚信😎,友善😚" data-fontsize="15px" data-random="true" async="async"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["link[rel=\"canonical\"]","meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="al icon-xiangzuo"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="al icon-xiangyou"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="al icon-shuaxin"></i></a><a class="rightMenu-item" href="#"><i class="al icon-xiangshang"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="al icon-bangzhushouce"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="al icon-sousuo"></i><span>百度搜索</span></a><!-- a.rightMenu-item(href="javascript:rmf.searchinThisPage();")--><!--     i.al.icon-sousuo--><!--     span='站内搜索'--><a class="rightMenu-item" href="#post-comment" onclick="rmf.yinyong()"><i class="al icon-shequpinglun"></i><span>引用文本评论</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-too"><a class="rightMenu-item" href="javascript:window.open(window.getSelection().toString());window.location.reload();"><i class="fa fa-link"></i><span>转到链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-paste"><a class="rightMenu-item" href="javascript:rmf.paste()"><i class="al icon-bangzhushouce"></i><span>粘贴</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-post"><a class="rightMenu-item" href="#post-comment"><i class="al icon-shequpinglun"></i><span>空降评论</span></a><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="al icon-icon-test"></i><span>复制本文地址</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="al icon-dianpudaohang"></i><span>新窗口打开</span></a><a class="rightMenu-item" id="menu-too" href="javascript:rmf.open()"><i class="al icon-dianpudaohang"></i><span>转到链接</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="al icon-bangzhushouce"></i><span>复制链接</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.saveAs()"><i class="al icon-xiazai"></i><span>保存图片</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="al icon-dianpudaohang"></i><span>在新窗口打开</span></a><a class="rightMenu-item" href="javascript:rmf.click()"><i class="al icon-quanping"></i><span>全屏显示</span></a><a class="rightMenu-item" href="javascript:rmf.copyLink()"><i class="al icon-fuzhi"></i><span>复制图片链接</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item" href="javascript:toRandomPost()"><i class="al icon-dianpudaohang"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="al icon-yinyang-taiji"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();"><i class="al icon-geshizhuanhuan-xuanzhong"></i><span>繁简转换</span></a><a class="rightMenu-item" href="javascript:toggleWinbox();"><i class="al icon-cog"></i><span>博客设置</span></a><!-- a.rightMenu-item(href="javascript:fullScreen();")--><!--     i.fas.fa-expand--><!--     span='进入全屏'--></div></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;62277.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.gejiba.com/images/f81ad1f3db7e19a5638aef7454ba354b.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;62277.html&quot;);" href="javascript:void(0);" alt="">butterfly主题常用记录</a><div class="blog-slider__text">记录butterfly主题常用到的东西</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;62277.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;31503.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/gitpng.png" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-22</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;31503.html&quot;);" href="javascript:void(0);" alt="">git远程与本地同步</a><div class="blog-slider__text">git远程与本地同步与常用代码记录</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;31503.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;37773.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.gejiba.com/images/0154d08de5ee0e01d313bcc614804283.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-03-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;37773.html&quot;);" href="javascript:void(0);" alt="">butterfly美化记录</a><div class="blog-slider__text">主题美化记录，教程来源记录</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;37773.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><!-- hexo injector body_end end --></body></html>
